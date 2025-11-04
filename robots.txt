@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ctz101-tx.github.io/flirtify/sitemap.xml
