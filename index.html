@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Flirtify - تواصل وابدأ الدردشة الآن</title>
+  <style>
+    * {
+      margin: 0; padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', 'Cairo', sans-serif;
+    }
+    body {
+      background: #1a1a1a;
+      color: white;
+      text-align: center;
+      overflow-x: hidden;
+    }
+    .hero {
+      position: relative;
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.4);
+    }
+    .content {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+      animation: fadeIn 2s ease;
+    }
+    .logo {
+      font-size: 3em;
+      font-weight: bold;
+      color: #ff69b4;
+      text-shadow: 0 0 10px #ff69b4;
+    }
+    .slogan {
+      font-size: 1.3em;
+      margin-top: 10px;
+      color: #ffd6f5;
+      font-style: italic;
+    }
+    .text {
+      margin-top: 25px;
+      font-size: 1.1em;
+      color: #f0f0f0;
+      line-height: 1.8;
+    }
+    .btn {
+      margin-top: 30px;
+      background: linear-gradient(45deg, #ff69b4, #b400ff);
+      color: white;
+      border: none;
+      padding: 15px 35px;
+      font-size: 1.2em;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      animation: bounce 2s infinite;
+    }
+    .btn:hover {
+      transform: scale(1.1);
+      background: linear-gradient(45deg, #b400ff, #ff69b4);
+    }
+    .lang-toggle {
+      position: absolute;
+      top: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.2);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 30px;
+      cursor: pointer;
+      color: white;
+      font-weight: bold;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0; transform: translateY(20px);}
+      to {opacity: 1; transform: translateY(0);}
+    }
+    @keyframes bounce {
+      0%, 100% {transform: translateY(0);}
+      50% {transform: translateY(-6px);}
+    }
+
+    footer {
+      position: absolute;
+      bottom: 20px;
+      font-size: 0.9em;
+      color: #ccc;
+    }
+  </style>
+</head>
+<body>
+  <div class="hero" id="hero">
+    <button class="lang-toggle" onclick="toggleLang()">EN</button>
+    <div class="content" id="content">
+      <div class="logo">Flirtify 💞</div>
+      <div class="slogan" id="slogan">"حين تلتقي الأرواح، لا حاجة للكلمات"</div>
+      <div class="text" id="text">
+        استعد لتجربة دردشة مختلفة، حيث تلتقي الأرواح قبل الكلمات.<br>
+        شارك اللحظة، ابتسم، واكتشف من يشبهك في Flirtify.
+      </div>
+      <a href="https://coomeet.me/?id=17622798295332" target="_blank">
+        <button class="btn" id="btn">ابدأ الدردشة الآن 🔥</button>
+      </a>
+    </div>
+    <footer>© 2025 Flirtify. جميع الحقوق محفوظة.</footer>
+  </div>
+
+  <script>
+    // ذكاء بسيط للتعرف على الخلفية
+    const hero = document.getElementById('hero');
+    const img = new Image();
+    img.src = '1.jpg';
+    img.onload = () => {
+      hero.style.backgroundImage = `url('1.jpg')`;
+    };
+
+    // تبديل اللغة
+    let lang = 'ar';
+    function toggleLang() {
+      const slogan = document.getElementById('slogan');
+      const text = document.getElementById('text');
+      const btn = document.getElementById('btn');
+      const toggle = document.querySelector('.lang-toggle');
+      if (lang === 'ar') {
+        lang = 'en';
+        document.body.dir = 'ltr';
+        slogan.innerText = '"When souls connect, words fade away."';
+        text.innerHTML = `Get ready for a new way to chat — where hearts meet before words.<br>
+        Smile, connect, and discover your match on Flirtify.`;
+        btn.innerText = "Start Chatting Now 🔥";
+        toggle.innerText = "AR";
+      } else {
+        lang = 'ar';
+        document.body.dir = 'rtl';
+        slogan.innerText = '"حين تلتقي الأرواح، لا حاجة للكلمات"';
+        text.innerHTML = `استعد لتجربة دردشة مختلفة، حيث تلتقي الأرواح قبل الكلمات.<br>
+        شارك اللحظة، ابتسم، واكتشف من يشبهك في Flirtify.`;
+        btn.innerText = "ابدأ الدردشة الآن 🔥";
+        toggle.innerText = "EN";
+      }
+    }
+  </script>
+</body>
+</html>
