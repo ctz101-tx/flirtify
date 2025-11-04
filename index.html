@@ -3,157 +3,114 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Flirtify - تواصل مباشر مع أشخاص جدد</title>
+
+  <meta name="description" content="Flirtify موقع دردشة مرئي حديث يتيح لك التعرف على أشخاص جدد حول العالم بسرعة وسهولة. انضم الآن وابدأ مغامرتك الاجتماعية!" />
+  <meta name="keywords" content="Flirtify, دردشة فيديو, تعارف مباشر, محادثة عشوائية, أصدقاء جدد, تواصل عالمي" />
+  <meta name="author" content="Flirtify Team" />
+
+  <meta property="og:title" content="Flirtify - تواصل مباشر مع أشخاص جدد" />
+  <meta property="og:description" content="انضم إلى Flirtify للتعارف عبر الفيديو بسهولة وسرعة!" />
+  <meta property="og:image" content="https://ctz101-tx.github.io/flirtify/1.jpg" />
+  <meta property="og:url" content="https://ctz101-tx.github.io/flirtify/" />
+  <meta name="twitter:card" content="summary_large_image" />
+
   <meta name="google-site-verification" content="9LPuFqDbBpTRYzK0nl27E8zOyygyWzgw_Cdx9ndryKg" />
-  <title>Flirtify | تواصل وتألق</title>
 
   <style>
-    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap');
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
     body {
+      margin: 0;
       font-family: 'Cairo', sans-serif;
-      background: url("1.jpg") no-repeat center center fixed;
-      background-size: cover;
+      background: url('1.jpg') no-repeat center center/cover;
       color: white;
       text-align: center;
-      min-height: 100vh;
-      overflow-x: hidden;
-    }
-
-    /* خلفية متدرجة فوق الصورة */
-    .overlay {
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 0, 0, 0.55);
-      z-index: 0;
     }
 
     header {
-      position: relative;
-      z-index: 1;
-      padding: 25px;
-      font-size: 2.2em;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 30px;
+      font-size: 2em;
       font-weight: bold;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(8px);
-      border-bottom: 2px solid rgba(255,255,255,0.2);
+      color: #ff66cc;
+      text-shadow: 0 0 15px #ff99ff;
     }
 
-    main {
-      position: relative;
-      z-index: 1;
-      margin-top: 100px;
-      background: rgba(255, 255, 255, 0.08);
-      backdrop-filter: blur(10px);
+    .content {
+      margin-top: 80px;
+      background: rgba(0,0,0,0.45);
+      display: inline-block;
       padding: 40px;
       border-radius: 20px;
-      display: inline-block;
-      animation: fadeIn 2s ease;
+      box-shadow: 0 0 30px rgba(255,255,255,0.2);
+      max-width: 700px;
     }
 
-    h1 {
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      font-family: 'Poppins', sans-serif;
+    h2 {
+      color: #ffd6f6;
+      font-size: 1.8em;
     }
 
     p {
-      font-size: 1.2em;
-      line-height: 1.8;
-      max-width: 600px;
-      margin: auto;
+      color: #fff;
+      font-size: 1.1em;
+      margin: 10px 0;
     }
 
-    .btn {
+    .quote {
+      font-style: italic;
+      color: #ffe6fa;
+      margin: 15px 0;
+    }
+
+    a.button {
       display: inline-block;
-      margin-top: 30px;
-      padding: 15px 35px;
-      background: #ff4b5c;
+      background: linear-gradient(45deg, #ff5db1, #ff66cc);
       color: white;
-      font-size: 1.2em;
-      border: none;
-      border-radius: 50px;
+      padding: 15px 40px;
+      border-radius: 30px;
       text-decoration: none;
+      font-size: 1.2em;
+      margin-top: 20px;
       transition: 0.3s;
-      box-shadow: 0 0 15px rgba(255, 75, 92, 0.5);
     }
 
-    .btn:hover {
-      background: #ff1f3a;
+    a.button:hover {
+      background: linear-gradient(45deg, #ff33aa, #ff80d5);
       transform: scale(1.05);
-      box-shadow: 0 0 25px rgba(255, 75, 92, 0.8);
     }
 
     footer {
-      position: relative;
-      z-index: 1;
-      margin-top: 100px;
-      padding: 20px;
-      background: rgba(255, 255, 255, 0.1);
+      margin-top: 60px;
       font-size: 0.9em;
-    }
-
-    /* حركة الدخول */
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(30px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    /* للنصوص المتحركة */
-    .typewriter {
-      display: inline-block;
-      overflow: hidden;
-      border-right: .15em solid #ff4b5c;
-      white-space: nowrap;
-      margin: 0 auto;
-      letter-spacing: .1em;
-      animation:
-        typing 4s steps(30, end),
-        blink-caret .75s step-end infinite;
-    }
-
-    @keyframes typing {
-      from { width: 0 }
-      to { width: 100% }
-    }
-
-    @keyframes blink-caret {
-      from, to { border-color: transparent }
-      50% { border-color: #ff4b5c; }
+      color: #ccc;
+      background: rgba(0,0,0,0.6);
+      padding: 15px;
     }
   </style>
 </head>
-
 <body>
-  <div class="overlay"></div>
 
-  <header>💞 Flirtify 💞</header>
+  <header>💖 Flirtify - تواصل مباشر عبر الفيديو</header>
 
-  <main>
-    <h1 class="typewriter">ابدأ رحلتك إلى عالم الإعجاب والتواصل!</h1>
-    <p>
-      مرحبًا بك في <strong>Flirtify</strong> — المنصة التي تجمع بين الذكاء الاصطناعي وجاذبيتك الطبيعية ✨<br>
-      تحدث، تعرف، وابدأ صداقات جديدة بسهولة وخصوصية تامة.
-    </p>
-    <a href="https://coomeet.me/?id=17622798295332" class="btn">ابدأ الآن</a>
+  <div class="content">
+    <h2>ابدأ مغامرتك الآن!</h2>
+    <p>هل تتساءل من قد يكون بانتظارك اليوم؟ ربما شخص يشاركك الاهتمام... وربما أكثر من ذلك.</p>
 
-    <hr style="margin:40px auto; width:50%; opacity:0.4;">
+    <p class="quote">"كل محادثة تبدأ بابتسامة، وقد تنتهي بقصة لا تُنسى."</p>
 
-    <h1>🌍 Welcome to Flirtify</h1>
-    <p>
-      Meet, chat, and flirt in the most elegant way.<br>
-      Smart. Simple. Private.
-    </p>
-    <a href="https://coomeet.me/?id=17622798295332" class="btn">Join Now</a>
-  </main>
+    <p>في Flirtify، لا تحتاج سوى نقرة واحدة لتبدأ حديثًا قد يغيّر يومك بالكامل.  
+    تعرف على أشخاص حقيقيين، وجوه جديدة، وقلوب تتحدث بلغات مختلفة.</p>
+
+    <a href="https://coomeet.me/?id=17622798295332" class="button">ابدأ الدردشة الآن 💬</a>
+
+    <p class="quote">"Sometimes a single chat can turn into something beautiful — try your luck tonight."</p>
+  </div>
 
   <footer>
-    © 2025 Flirtify — جميع الحقوق محفوظة. Made with ❤️ by Max
+    <p>© 2025 Flirtify. جميع الحقوق محفوظة.</p>
+    <p>Developed with ❤️ by Flirtify Team</p>
   </footer>
+
 </body>
 </html>
