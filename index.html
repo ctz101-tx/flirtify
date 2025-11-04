@@ -1,160 +1,159 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Flirtify - تواصل وابدأ الدردشة الآن</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="google-site-verification" content="9LPuFqDbBpTRYzK0nl27E8zOyygyWzgw_Cdx9ndryKg" />
+  <title>Flirtify | تواصل وتألق</title>
+
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&family=Poppins:wght@400;700&display=swap');
+
     * {
-      margin: 0; padding: 0;
+      margin: 0;
+      padding: 0;
       box-sizing: border-box;
-      font-family: 'Poppins', 'Cairo', sans-serif;
-    }
-    body {
-      background: #1a1a1a;
-      color: white;
-      text-align: center;
-      overflow-x: hidden;
-    }
-    .hero {
-      position: relative;
-      height: 100vh;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.7));
-      background-size: cover;
-      background-position: center;
-      transition: background-image 1s ease-in-out;
-    }
-    .hero::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0,0,0,0.4);
-    }
-    .content {
-      position: relative;
-      z-index: 2;
-      max-width: 90%;
-      animation: fadeIn 2s ease;
-    }
-    .logo {
-      font-size: 3em;
-      font-weight: bold;
-      color: #ff69b4;
-      text-shadow: 0 0 10px #ff69b4;
-    }
-    .slogan {
-      font-size: 1.3em;
-      margin-top: 10px;
-      color: #ffd6f5;
-      font-style: italic;
-    }
-    .text {
-      margin-top: 25px;
-      font-size: 1.1em;
-      color: #f0f0f0;
-      line-height: 1.8;
-    }
-    .btn {
-      margin-top: 30px;
-      background: linear-gradient(45deg, #ff69b4, #b400ff);
-      color: white;
-      border: none;
-      padding: 15px 35px;
-      font-size: 1.2em;
-      border-radius: 50px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      animation: bounce 2s infinite;
-    }
-    .btn:hover {
-      transform: scale(1.1);
-      background: linear-gradient(45deg, #b400ff, #ff69b4);
-    }
-    .lang-toggle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.2);
-      border: none;
-      padding: 10px 20px;
-      border-radius: 30px;
-      cursor: pointer;
-      color: white;
-      font-weight: bold;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0; transform: translateY(20px);}
-      to {opacity: 1; transform: translateY(0);}
+    body {
+      font-family: 'Cairo', sans-serif;
+      background: url("1.jpg") no-repeat center center fixed;
+      background-size: cover;
+      color: white;
+      text-align: center;
+      min-height: 100vh;
+      overflow-x: hidden;
     }
-    @keyframes bounce {
-      0%, 100% {transform: translateY(0);}
-      50% {transform: translateY(-6px);}
+
+    /* خلفية متدرجة فوق الصورة */
+    .overlay {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0, 0, 0, 0.55);
+      z-index: 0;
+    }
+
+    header {
+      position: relative;
+      z-index: 1;
+      padding: 25px;
+      font-size: 2.2em;
+      font-weight: bold;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(8px);
+      border-bottom: 2px solid rgba(255,255,255,0.2);
+    }
+
+    main {
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(10px);
+      padding: 40px;
+      border-radius: 20px;
+      display: inline-block;
+      animation: fadeIn 2s ease;
+    }
+
+    h1 {
+      font-size: 2.5em;
+      margin-bottom: 20px;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    p {
+      font-size: 1.2em;
+      line-height: 1.8;
+      max-width: 600px;
+      margin: auto;
+    }
+
+    .btn {
+      display: inline-block;
+      margin-top: 30px;
+      padding: 15px 35px;
+      background: #ff4b5c;
+      color: white;
+      font-size: 1.2em;
+      border: none;
+      border-radius: 50px;
+      text-decoration: none;
+      transition: 0.3s;
+      box-shadow: 0 0 15px rgba(255, 75, 92, 0.5);
+    }
+
+    .btn:hover {
+      background: #ff1f3a;
+      transform: scale(1.05);
+      box-shadow: 0 0 25px rgba(255, 75, 92, 0.8);
     }
 
     footer {
-      position: absolute;
-      bottom: 20px;
+      position: relative;
+      z-index: 1;
+      margin-top: 100px;
+      padding: 20px;
+      background: rgba(255, 255, 255, 0.1);
       font-size: 0.9em;
-      color: #ccc;
+    }
+
+    /* حركة الدخول */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* للنصوص المتحركة */
+    .typewriter {
+      display: inline-block;
+      overflow: hidden;
+      border-right: .15em solid #ff4b5c;
+      white-space: nowrap;
+      margin: 0 auto;
+      letter-spacing: .1em;
+      animation:
+        typing 4s steps(30, end),
+        blink-caret .75s step-end infinite;
+    }
+
+    @keyframes typing {
+      from { width: 0 }
+      to { width: 100% }
+    }
+
+    @keyframes blink-caret {
+      from, to { border-color: transparent }
+      50% { border-color: #ff4b5c; }
     }
   </style>
 </head>
+
 <body>
-  <div class="hero" id="hero">
-    <button class="lang-toggle" onclick="toggleLang()">EN</button>
-    <div class="content" id="content">
-      <div class="logo">Flirtify 💞</div>
-      <div class="slogan" id="slogan">"حين تلتقي الأرواح، لا حاجة للكلمات"</div>
-      <div class="text" id="text">
-        استعد لتجربة دردشة مختلفة، حيث تلتقي الأرواح قبل الكلمات.<br>
-        شارك اللحظة، ابتسم، واكتشف من يشبهك في Flirtify.
-      </div>
-      <a href="https://coomeet.me/?id=17622798295332" target="_blank">
-        <button class="btn" id="btn">ابدأ الدردشة الآن 🔥</button>
-      </a>
-    </div>
-    <footer>© 2025 Flirtify. جميع الحقوق محفوظة.</footer>
-  </div>
+  <div class="overlay"></div>
 
-  <script>
-    // ذكاء بسيط للتعرف على الخلفية
-    const hero = document.getElementById('hero');
-    const img = new Image();
-    img.src = '1.jpg';
-    img.onload = () => {
-      hero.style.backgroundImage = `url('1.jpg')`;
-    };
+  <header>💞 Flirtify 💞</header>
 
-    // تبديل اللغة
-    let lang = 'ar';
-    function toggleLang() {
-      const slogan = document.getElementById('slogan');
-      const text = document.getElementById('text');
-      const btn = document.getElementById('btn');
-      const toggle = document.querySelector('.lang-toggle');
-      if (lang === 'ar') {
-        lang = 'en';
-        document.body.dir = 'ltr';
-        slogan.innerText = '"When souls connect, words fade away."';
-        text.innerHTML = `Get ready for a new way to chat — where hearts meet before words.<br>
-        Smile, connect, and discover your match on Flirtify.`;
-        btn.innerText = "Start Chatting Now 🔥";
-        toggle.innerText = "AR";
-      } else {
-        lang = 'ar';
-        document.body.dir = 'rtl';
-        slogan.innerText = '"حين تلتقي الأرواح، لا حاجة للكلمات"';
-        text.innerHTML = `استعد لتجربة دردشة مختلفة، حيث تلتقي الأرواح قبل الكلمات.<br>
-        شارك اللحظة، ابتسم، واكتشف من يشبهك في Flirtify.`;
-        btn.innerText = "ابدأ الدردشة الآن 🔥";
-        toggle.innerText = "EN";
-      }
-    }
-  </script>
+  <main>
+    <h1 class="typewriter">ابدأ رحلتك إلى عالم الإعجاب والتواصل!</h1>
+    <p>
+      مرحبًا بك في <strong>Flirtify</strong> — المنصة التي تجمع بين الذكاء الاصطناعي وجاذبيتك الطبيعية ✨<br>
+      تحدث، تعرف، وابدأ صداقات جديدة بسهولة وخصوصية تامة.
+    </p>
+    <a href="https://coomeet.me/?id=17622798295332" class="btn">ابدأ الآن</a>
+
+    <hr style="margin:40px auto; width:50%; opacity:0.4;">
+
+    <h1>🌍 Welcome to Flirtify</h1>
+    <p>
+      Meet, chat, and flirt in the most elegant way.<br>
+      Smart. Simple. Private.
+    </p>
+    <a href="https://coomeet.me/?id=17622798295332" class="btn">Join Now</a>
+  </main>
+
+  <footer>
+    © 2025 Flirtify — جميع الحقوق محفوظة. Made with ❤️ by Max
+  </footer>
 </body>
 </html>
